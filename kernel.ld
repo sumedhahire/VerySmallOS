@@ -17,14 +17,14 @@ SECTIONS {
 	}
 	
 	.bss : ALIGN(4) {
-		_bss = .; /* mark start address of .bss */
+		__bss = .; /* mark start address of .bss */
 		*(.bss .bss.* .sbss .sbss.*); /* collect all .bss variabled */
-		_bss_end = .; /* mark end address of .bss */
+		__bss_end = .; /* mark end address of .bss */
 	}
 	
 	. = ALIGN(4);
 	. += 128 * 1024; /* 128 kb ki ram */
-	_stack_top = .;
+	__stack_top = .; /* top address of the ram */
 }						
 /*
 The entry point of the kernel is the boot function.
