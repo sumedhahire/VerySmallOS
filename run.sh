@@ -21,7 +21,7 @@ CFLAGS="-std=c11 -O2 -g3 -Wall -Wextra --target=riscv32-unknown-elf -fuse-ld=lld
 
 # Build the kernel
 $CC $CFLAGS -Wl,-Tkernel.ld -Wl,-Map=kernel.map -o kernel.elf \
-    kernel.c
+    kernel_helloworld.c #change here for diff kernel
 
 # OpenSBI firmware (riscv32)
 OPENSBI=/usr/lib/riscv32-linux-gnu/opensbi/generic/fw_dynamic.bin
